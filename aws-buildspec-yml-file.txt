@@ -2,17 +2,19 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: jdk-11
+      java: corretto8
+      #java: jdk-8
   pre_build:
     commands:
-      - cd src/main/resources/static
-      - npm install bower -g
-      - bower install --allow-root
+      #- cd src/main/resources/static
+      #- npm install bower -g
+      #- bower install --allow-root
       - pwd
       - ls -lrta
       - cd $CODEBUILD_SRC_DIR
       - pwd
       - ls -lrta
+      #- cd $CODEBUILD_SRC_DIR
   build:
     commands:
       - echo Build started on `date`
@@ -21,10 +23,12 @@ phases:
       - echo Build completed on `date`
       - pwd
       - ls -lrta
+      #- mvn package
       - mvn clean
-      - mvn package
 artifacts:
   files:
-    - target/softobiz-1.0.0.war
+    #- target/softobiz-1.0.0.war
+      - '**/*'
+    #- softobiz-1.0.0.war
     
   
