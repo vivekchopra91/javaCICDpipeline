@@ -8,7 +8,7 @@ phases:
       - unzip -fo packer_*.zip
       - curl -qL -o jq https://github.com/stedolan/jq/releases/download/jq-1.5/jq-linux64 && chmod +x ./jq
       - mv packer_* /usr/local/bin
-      - mv /usr/local/bin/packer
+      - mv /usr/local/bin/packer_* /usr/local/bin/packer
       - mv jq /usr/local/bin 
       - pwd
       - ls -lrt
