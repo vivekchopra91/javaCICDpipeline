@@ -1,5 +1,5 @@
 version: 0.2
-
+become: yes
 phases:
   pre_build:
     commands:
