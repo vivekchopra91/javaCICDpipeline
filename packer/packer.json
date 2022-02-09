@@ -1,0 +1,50 @@
+{
+    "variables":{
+        "applicaiton_name": "softobiz",
+        "application_version": "1.0.0",
+        "region": "us-east-1",
+        "instance_type": "t2.micro",
+        "source_ami": "ami-04505e74c0741db8d",
+        "ami_aws_account_id": "156779398815"
+
+    },
+    "builders": [
+        {
+            "name": "{{ user `applicaiton_name` }}",
+            "type": "amazon-ebs",
+            "profile": "devops",
+            "ssh_username": "ubuntu",
+            "force_deregister": "true",
+            "force_delete_snapshot": "true",
+            "associate_public_ip_address": "true",
+            "region": "{{ user  `region` }}",
+            "source_ami": "{{ user `source_ami` }}",
+            "instance_type":  "{{ user `instance_type` }}",
+            "ami_name": "{{ user `applicaiton_name` }}-{{ user `application_version` }}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "sudo apt update",
+                "sudo apt install apache2 -y",
+                "sudo apt install software-properties-common -y",
+                "sudo apt install git curl wget unzip -y",
+                "sudo apt-add-repository ppa:ansible/ansible",
+                "sudo apt install ansible -y"
+            ]
+        },
+        {
+            "type": "shell",
+            "inline": [
+                "cd /opt/",
+                "git clone https://github.com/keshavkummari/keshavkummari.git",
+                "cd /opt/keshavkummari/",
+                "cp -pvr /opt/keshavkummari/ /var/www/html/"
+
+            ]
+        }
+
+    ]
+}
