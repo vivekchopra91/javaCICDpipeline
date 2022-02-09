@@ -23,7 +23,8 @@ phases:
       - echo Build completed on `date`
       - pwd
       - ls -lrta
-      - mvn package
+      #- mvn package
+      - mvn clean
 artifacts:
   files:
     - target/softobiz-1.0.0.war
