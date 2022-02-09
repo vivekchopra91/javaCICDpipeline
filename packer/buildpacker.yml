@@ -1,5 +1,5 @@
 version: 0.2
-
+# become: yes
 phases:
   pre_build:
     commands:
@@ -10,6 +10,7 @@ phases:
       - mv jq /usr/local/bin 
       - pwd
       - ls -lrt
+      - chmod +x /packer.json
       - packer validate packer.json
   build:
     commands:
