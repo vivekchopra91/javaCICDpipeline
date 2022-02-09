@@ -5,14 +5,14 @@
         "region": "us-east-1",
         "instance_type": "t2.micro",
         "source_ami": "ami-04505e74c0741db8d",
-        "ami_aws_account_id": "156779398815"
+        "ami_aws_account_id": "942537291803"
 
     },
     "builders": [
         {
             "name": "{{ user `applicaiton_name` }}",
             "type": "amazon-ebs",
-            "profile": "devops",
+            "profile": "vd",
             "ssh_username": "ubuntu",
             "force_deregister": "true",
             "force_delete_snapshot": "true",
