@@ -5,16 +5,23 @@ phases:
       java: corretto11
   pre_build:
     commands:
-      - cd src/main/resources/static
-      - npm install bower -g
-      - bower install --allow-root
+      #- cd src/main/resources/static
+      #- npm install bower -g
+      #- bower install --allow-root
+      - pwd
+      - ls -lrta
       - cd $CODEBUILD_SRC_DIR
+      - pwd
+      - ls -lrta
+      #- cd $CODEBUILD_SRC_DIR
   build:
     commands:
       - echo Build started on `date`
   post_build:
     commands:
       - echo Build completed on `date`
+      - pwd
+      - ls -lrta
       - mvn package
 artifacts:
   files:
