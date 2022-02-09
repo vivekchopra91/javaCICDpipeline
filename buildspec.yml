@@ -3,6 +3,7 @@ phases:
   install:
     runtime-versions:
       java: corretto11
+      #java: jdk-8
   pre_build:
     commands:
       #- cd src/main/resources/static
