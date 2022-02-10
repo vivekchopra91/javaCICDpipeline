@@ -20,6 +20,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.source>1.8</maven.compiler.source>
+ 		<maven.compiler.target>1.8</maven.compiler.target>
 		<java.version>11</java.version>
 		<surefire.version>3.0.0-M5</surefire.version>
 		<jacoco.version>0.7.9</jacoco.version>
@@ -108,6 +110,14 @@
 			  <artifactId>maven-surefire-plugin</artifactId>
 			  <version>${surefire.version}</version><!--$NO-MVN-MAN-VER$-->
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+        	</plugin>
 			<plugin>
 			    <groupId>org.jacoco</groupId>
 			    <artifactId>jacoco-maven-plugin</artifactId>
