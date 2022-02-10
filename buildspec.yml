@@ -21,7 +21,7 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    # - target/softobiz-1.0.0.war
-    - '**/*'
+    - target/softobiz-1.0.0.war
+    # - '**/*'
     
   
