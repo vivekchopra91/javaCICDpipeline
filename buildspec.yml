@@ -14,14 +14,14 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - mvn clean
+      - mvn package
       - ls -lrta
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - target/softobiz-1.0.0.war
-    # - '**/*'
+    # - target/softobiz-1.0.0.war
+    - '**/*'
     
   
